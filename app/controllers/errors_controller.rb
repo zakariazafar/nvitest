@@ -1,3 +1,4 @@
+# error controller for 404 and 500 errors
 class ErrorsController < ApplicationController
   def not_found
     render json: {

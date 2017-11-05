@@ -1,10 +1,12 @@
+# Helper for Error module
 module Error::Helpers
+  # Render class
   class Render
-    def self.json(_error, _status, _message)
+    def self.json(error, status, message)
       {
-        status: _status,
-        error: _error,
-        message: _message
+        status: status,
+        error: error,
+        message: message
       }.as_json
     end
   end

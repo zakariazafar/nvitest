@@ -1,4 +1,6 @@
+# Error Module
 module Error
+  # Error handler module
   module ErrorHandler
     def self.included(clazz)
       clazz.class_eval do
@@ -16,9 +18,9 @@ module Error
 
     private
 
-    def respond(_error, _status, _message)
-      json = Helpers::Render.json(_error, _status, _message)
-      render json: json, status: _status
+    def respond(error, status, message)
+      json = Helpers::Render.json(error, status, message)
+      render json: json, status: status
     end
   end
 end

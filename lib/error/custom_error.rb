@@ -1,11 +1,13 @@
+# Custom Error Module
 module Error
+  # Custom Error class
   class CustomError < StandardError
     attr_reader :status, :error, :message
 
-    def initialize(_error = nil, _status = nil, _message = nil)
-      @error = _error || 422
-      @status = _status || :unprocessable_entity
-      @message = _message || 'Malformed csv file'
+    def initialize(error = nil, status = nil, message = nil)
+      @error = error || 422
+      @status = status || :unprocessable_entity
+      @message = message || 'Malformed csv file'
     end
 
     def fetch_json
