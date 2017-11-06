@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: hivetec_development
+  database: nvoi_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: hivetec_test
+  database: nvoi_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['HIVETEC_DATABASE_DBNAME'] %>
-  username: <%= ENV['HIVETEC_DATABASE_USERNAME'] %>
-  password: <%= ENV['HIVETEC_DATABASE_PASSWORD'] %>
+  database: <%= ENV['NVOI_DATABASE_DBNAME'] %>
+  username: <%= ENV['NVOI_DATABASE_USERNAME'] %>
+  password: <%= ENV['NVOI_DATABASE_PASSWORD'] %>

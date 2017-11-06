@@ -1,0 +1,24 @@
+<% unless smart_listing.empty? %>
+ <table class="table table-striped">
+ 	<thead>
+ 		<th class="col-xs-1"><%= smart_listing.sortable "Title", "title"%> </th>
+ 		<th class="col-xs-1"><%= smart_listing.sortable "Author", "author"%> </th>
+ 		<th class="col-xs-1"><%= smart_listing.sortable "Publisher", "publisher"%> </th>
+ 	</thead>
+ 	<tbody>
+ 		<% smart_listing.collection.each do |o| %>
+ 		<tr>
+ 		  <td class="col-xs-1"><%= ApplicationDecorator.titleize(o.title||="") %></td>
+ 		  <td class="col-xs-1"><%= ApplicationDecorator.titleize(o.author||="")%></td>
+ 		  <td class="col-xs-1"><%= ApplicationDecorator.titleize(o.publisher||="")%></td>
+ 		</tr>
+ 		<% end %>
+ 	</tbody>
+ </table>
+
+
+ <%= smart_listing.paginate %>
+  <%= smart_listing.pagination_per_page_links %>
+ <% else %>
+  No record found
+ <% end %>
