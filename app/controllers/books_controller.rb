@@ -10,6 +10,10 @@ class BooksController < ApplicationController
 
   private
   def capture_ip
-  	VisitorLocationService.new.record_visitor_ip
+  	Visitor.create(ip: remote_ip)
+  	# VisitorLocationService.record_visitor_ip
+  end
+  def remote_ip
+  	request.remote_ip
   end
 end

@@ -1,13 +1,8 @@
 class VisitorLocationService
-	def record_visitor_ip
+	def self.record_visitor_ip
 		Visitor.create(ip: remote_ip)
 	end
-
-	def remote_ip
-	    if Rails.env.production?
-		  request.remote_ip
-		else
-		  "127.0.0.1"
-		end
+    def self.remote_ip
+	 	request.remote_ip
     end
 end
